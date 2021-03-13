@@ -29,7 +29,7 @@ final class Symfony28Test extends AbstractRectorTestCase
         return $this->yieldFilesFromDirectory(__DIR__ . '/FixtureSymfony28');
     }
 
-    protected function provideConfigFilePath(): string
+    public function provideConfigFilePath(): string
     {
         return __DIR__ . '/../../../../../config/set/symfony28.php';
     }

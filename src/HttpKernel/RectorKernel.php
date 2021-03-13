@@ -49,8 +49,8 @@ final class RectorKernel extends Kernel implements ExtraConfigAwareKernelInterfa
     public function getCacheDir(): string
     {
         $cacheDirectory = $_ENV['KERNEL_CACHE_DIRECTORY'] ?? null;
-        if ($cacheDirectory) {
-            return $cacheDirectory;
+        if ($cacheDirectory !== null) {
+            return $cacheDirectory . '/' . $this->environment;
         }
 
         // manually configured, so it can be replaced in phar
@@ -103,11 +103,15 @@ final class RectorKernel extends Kernel implements ExtraConfigAwareKernelInterfa
 
     protected function build(ContainerBuilder $containerBuilder): void
     {
+        // @see https://symfony.com/blog/new-in-symfony-4-4-dependency-injection-improvements-part-1
+        $containerBuilder->setParameter('container.dumper.inline_factories', true);
+        // to fix reincluding files again
+        $containerBuilder->setParameter('container.dumper.inline_class_loader', false);
+
         $containerBuilder->addCompilerPass(new AutowireArrayParameterCompilerPass());
 
-        // autowire Rectors by default (mainly for 3rd party code)
+        // autowire Rectors by default (mainly for tests)
         $containerBuilder->addCompilerPass(new AutowireInterfacesCompilerPass([RectorInterface::class]));
-
         $containerBuilder->addCompilerPass(new MakeRectorsPublicCompilerPass());
 
         // add all merged arguments of Rector services

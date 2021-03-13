@@ -27,8 +27,8 @@ final class FormTypeInstanceToClassConstRectorTest extends AbstractRectorTestCas
         return $this->yieldFilesFromDirectory(__DIR__ . '/Fixture');
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return FormTypeInstanceToClassConstRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

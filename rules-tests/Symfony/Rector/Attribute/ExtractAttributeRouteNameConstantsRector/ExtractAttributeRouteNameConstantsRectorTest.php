@@ -38,8 +38,8 @@ final class ExtractAttributeRouteNameConstantsRectorTest extends AbstractRectorT
         ];
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return ExtractAttributeRouteNameConstantsRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

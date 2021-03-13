@@ -27,8 +27,8 @@ final class ValidatorBuilderEnableAnnotationMappingRectorTest extends AbstractRe
         return $this->yieldFilesFromDirectory(__DIR__ . '/Fixture');
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return ValidatorBuilderEnableAnnotationMappingRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

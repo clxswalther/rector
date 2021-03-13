@@ -27,8 +27,8 @@ final class VarDumperTestTraitMethodArgsRectorTest extends AbstractRectorTestCas
         return $this->yieldFilesFromDirectory(__DIR__ . '/Fixture');
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return VarDumperTestTraitMethodArgsRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

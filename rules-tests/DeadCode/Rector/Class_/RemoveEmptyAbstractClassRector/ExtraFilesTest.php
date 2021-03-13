@@ -35,8 +35,8 @@ final class ExtraFilesTest extends AbstractRectorTestCase
         yield [new SmartFileInfo(__DIR__ . '/FixtureExtraFiles/ExtendsAbstractChild.php.inc'), $extraFileInfos];
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return RemoveEmptyAbstractClassRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

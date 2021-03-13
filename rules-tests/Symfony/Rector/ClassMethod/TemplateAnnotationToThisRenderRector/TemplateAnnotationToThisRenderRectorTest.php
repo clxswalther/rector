@@ -27,8 +27,8 @@ final class TemplateAnnotationToThisRenderRectorTest extends AbstractRectorTestC
         return $this->yieldFilesFromDirectory(__DIR__ . '/Fixture');
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return TemplateAnnotationToThisRenderRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

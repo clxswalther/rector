@@ -27,8 +27,8 @@ final class SimplifyWebTestCaseAssertionsRectorTest extends AbstractRectorTestCa
         return $this->yieldFilesFromDirectory(__DIR__ . '/Fixture');
     }
 
-    protected function getRectorClass(): string
+    public function provideConfigFilePath(): string
     {
-        return SimplifyWebTestCaseAssertionsRector::class;
+        return __DIR__ . '/config/configured_rule.php';
     }
 }

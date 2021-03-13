@@ -107,7 +107,9 @@
             "rules-tests/CodingStyle/Rector/Namespace_/ImportFullyQualifiedNamesRector/Source",
             "rules-tests/Renaming/Rector/Name/RenameClassRector/Source",
             "rules-tests/Renaming/Rector/FileWithoutNamespace/PseudoNamespaceToNamespaceRector/Source",
-            "rules-tests/Symfony4/Rector/MethodCall/ContainerGetToConstructorInjectionRector/Source"
+            "rules-tests/Symfony4/Rector/MethodCall/ContainerGetToConstructorInjectionRector/Source",
+            "rules-tests/CodingStyle/Rector/Namespace_/ImportFullyQualifiedNamesRector/Source",
+            "rules-tests/Renaming/Rector/Name/RenameClassRector/Source"
         ],
         "files": [
             "vendor/nette/forms/src/Forms/Controls/SubmitButton.php",
@@ -116,7 +118,6 @@
             "rules-tests/Transform/Rector/FuncCall/FuncCallToMethodCallRector/Source/some_view_function.php",
             "rules-tests/TypeDeclaration/Rector/FunctionLike/ReturnTypeDeclarationRector/Source/MyBar.php",
             "rules-tests/TypeDeclaration/Rector/Property/CompleteVarDocTypePropertyRector/Source/EventDispatcher.php",
-            "vendor/symfony/dependency-injection/Loader/Configurator/ContainerConfigurator.php",
             "tests/debug_functions.php"
         ]
     },
